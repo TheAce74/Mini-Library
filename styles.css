@@ -1,0 +1,624 @@
+/* resets */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+    scroll-padding-top: 4.5em;
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select,
+a {
+    font: inherit;
+    color: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* main styles */
+:root {
+    --light-background: #ededed;
+    --dark-background: #1d2a35;
+    --light-text: #000000;
+    --dark-text: #cdcdcd;
+    --green: #04aa6d;
+    --red: #f44336;
+    --dark-menu-background: rgba(4, 9, 30, .7);
+
+    --background: var(--light-background);
+    --text: var(--light-text);
+    --menu-background: var(--dark-menu-background);
+}
+
+/* observer class */
+.background {
+    background-color: var(--background) !important;
+    color: var(--text) !important;
+    box-shadow: 0 0 6px var(--dark-menu-background);
+}
+
+@font-face {
+    font-family: Gentium;
+    src: url(assets/font/GentiumBasic-Regular.ttf);
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: Gentium, serif;
+}
+
+input {
+    caret-color: var(--green);
+    outline-color: var(--green);
+    padding-left: .7em !important;
+}
+
+button {
+    outline-color: var(--green);
+}
+
+/* header */
+header {
+    display: flex;
+    position: fixed;
+    z-index: 2;
+    background: transparent;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: .3em 2em;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--dark-text);
+    transition: .5s;
+}
+
+header img {
+    width: 4rem;
+}
+
+header h1 {
+    font-weight: bolder;
+    color: var(--green);
+    text-align: center;
+}
+
+header nav {
+    flex: .5;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav ul li {
+    list-style-type: none;
+    font-size: 1.3rem;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    padding: .5em;
+}
+
+header nav ul li a:hover {
+    color: var(--green);
+}
+
+#open,
+#close {
+    display: none;
+}
+
+/* home section */
+#home {
+    min-height: 100vh;
+    background: linear-gradient(var(--dark-menu-background), var(--dark-menu-background)), url("assets/pics/study.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#home h2 {
+    margin-bottom: 1.5em;
+    font-size: 3rem;
+    color: var(--dark-text);
+    text-align: center;
+}
+
+/* books section */
+#books {
+    width: 90%;
+    margin: auto;
+}
+
+#books {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 2em;
+    gap: 1em;
+}
+
+.favorites,
+.recent {
+    border: 5px ridge var(--green);
+    padding: .8em;
+    height: 25em;
+}
+
+.favorites,
+.recent {
+    overflow: auto;
+}
+
+.favorites h2,
+.recent h2 {
+    text-align: center;
+    margin-bottom: .7em;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    margin-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #000;
+}
+
+.item img {
+    width: 1.5em;
+    cursor: pointer;
+}
+
+.item img:nth-of-type(1) {
+    cursor: default;
+}
+
+.item h3 {
+    flex: .45;
+}
+
+.removeFav {
+    display: none;
+}
+
+.item:last-child {
+    border: none;
+}
+
+.allBooks {
+    grid-column: 1 / 3;
+    border: 5px ridge var(--green);
+    padding: .8em;
+    height: 26em;
+    margin-bottom: 1em;
+    overflow: auto;
+}
+
+.allBooks h2 {
+    margin-left: 3em;
+    margin-bottom: .5em;
+}
+
+.filter {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.3em;
+}
+
+.filter label {
+    font-size: 1.3rem;
+    font-weight: bold;
+    flex: .4;
+}
+
+#filter {
+    padding: .3em;
+    font-size: 1rem;
+    width: 60%;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.allBooks ol li progress {
+    -webkit-appearance: none;
+    width: 5em;
+}
+
+.allBooks ol li progress::-webkit-progress-value {
+    background-color: var(--red);
+}
+
+#books > img {
+    width: 3em;
+    grid-column: 1 / span 2;
+    margin: auto;
+    cursor: pointer;
+}
+
+/* docs section */
+#docs {
+    min-height: 100vh;
+    width: 90%;
+    margin: auto;
+}
+
+#docs h2 {
+    margin-bottom: .3em;
+}
+
+#docs ol,
+#docs p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    width: 95%;
+    margin: auto;
+    margin-bottom: .4em;
+    counter-reset: number;
+}
+
+#docs ol li {
+    counter-increment: number;
+}
+
+#docs ol li::marker {
+    content: counters(number, ".") "  ";
+    font-weight: bold;
+    color: var(--red);
+}
+
+#docs > p span,
+#docs p a {
+    color: var(--green);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* new book popup */
+.newBook {
+    position: fixed;
+    inset: 20%;
+    text-align: center;
+    z-index: 3;
+    background-color: var(--background);
+    padding: 1em;
+    padding-top: 2.5em;
+    box-shadow: 0px 0px 0px 100vmax var(--menu-background);
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: none;
+}
+
+.newBook img {
+    width: 3em;
+    height: 3em;
+    background-color: var(--dark-background);
+    border-radius: 50%;
+    padding: .5em;
+    position: fixed;
+    top: 15.7%;
+    right: 17.9%;
+    cursor: pointer;
+}
+
+.newBook h2 {
+    margin-bottom: 1em;
+    font-weight: bolder;
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+.newBook > div {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 1.8em;
+}
+
+.newBook > div label {
+    width: 20%;
+}
+
+.newBook > div input {
+    width: 70%;
+}
+
+.btn {
+    padding: .4em .7em;
+    width: max-content;
+    border-radius: 10px;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: .3s;
+    text-align: center;
+}
+
+.btn:hover {
+    color: var(--dark-text);
+    background-color: var(--green);
+    border-color: var(--green);
+}
+
+/* view book popup */
+.viewBook {
+    position: fixed;
+    inset: 4%;
+    text-align: center;
+    z-index: 3;
+    background-color: var(--background);
+    padding: 1em;
+    padding-top: 1.6em;
+    box-shadow: 0px 0px 0px 100vmax var(--menu-background);
+    font-size: 1.2rem;
+    font-weight: bold;
+    overflow: auto;
+    display: none;
+}
+
+.viewBook img {
+    width: 2em;
+    height: 2em;
+    background-color: var(--dark-background);
+    border-radius: 50%;
+    padding: .5em;
+    position: fixed;
+    top: .7%;
+    right: 2.5%;
+    cursor: pointer;
+}
+
+.viewBook h2 {
+    margin-bottom: .3em;
+    font-weight: bolder;
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+.viewBook > div:nth-of-type(1),
+.viewBook > div:nth-of-type(2) {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.viewBook p {
+    line-height: 0;
+}
+
+.viewBook progress {
+    -webkit-appearance: none;
+}
+
+.viewBook progress::-webkit-progress-value {
+    background-color: var(--red);
+}
+
+.viewBook h3 {
+    text-align: center;
+}
+
+.viewBook > div:nth-of-type(3) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1em;
+}
+
+.viewBook input[type="checkbox"] {
+    accent-color: var(--green);
+    cursor: pointer;
+}
+
+/* utility progress class */
+.viewBook .nice::-webkit-progress-value,
+.allBooks ol li .nice::-webkit-progress-value {
+    background-color: var(--green);
+}
+
+/* utility filter class */
+.hide {
+    display: none;
+}
+
+@media (max-width: 44rem) {
+    html,
+    body {
+        scroll-padding-top: 0;
+        font-size: 14px;
+        }
+
+    /* header */
+    header {
+            flex-direction: column;
+            background: var(--menu-background);
+            left: -400px;
+            bottom: 0;
+            width: fit-content;
+            justify-content: flex-start;
+        }
+    
+    header img {
+        margin-top: 4em;
+    }
+
+    header h1 {
+        margin-top: 1em;
+    }
+
+    header nav {
+        margin-top: 2em;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin-bottom: 2em;
+    }
+
+    #close {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 1.5em;
+        width: 2em;
+        margin-top: 1em;
+        cursor: pointer;
+    }
+
+    .close {
+        left: -400px;
+        transition: 1s;
+    }
+
+    #open {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 1.5em;
+        width: 2em;
+        margin-top: 1em;
+        cursor: pointer;
+    }
+
+    .open {
+        left: 0;
+        transition: 1s;
+    }
+
+    /* home section */
+    #home h2 {
+        font-size: 2.2rem;
+    }
+
+    /* books section */
+    #books {
+        grid-template-columns: 100%;
+    }
+
+    .recent,
+    .allBooks {
+        grid-column: 1 / 2;
+    }
+
+    .recent h3,
+    .favorites h3 {
+        font-size: .9rem;
+    }
+
+    .filter label {
+        font-size: 1rem;
+        flex: .7;
+    }
+
+    #filter {
+        font-size: .7rem;
+    }
+
+    .allBooks ol {
+        font-size: .7rem;
+    }
+
+    #books > img {
+        width: 2.2em;
+    }
+
+    /* docs section */
+    #docs ol,
+    #docs p {
+        width: 85%;
+    }
+
+    /* new book popup */
+    .newBook {
+        inset: 28.5%;
+        font-size: 1rem;
+    }
+
+    .newBook img {
+        width: 2em;
+        height: 2em;
+        top: 26.2%;
+        right: 26.4%;
+    }
+
+    .newBook h2 {
+        margin-bottom: .3em;
+        font-size: 1.5rem;
+        margin-top: -.4em;
+    }
+
+    .newBook > div {
+        margin-bottom: 1em;
+        flex-direction: column;
+    }
+
+    .newBook > div label {
+        width: 100%;
+        margin-bottom: .5em;
+    }
+
+    .newBook > div input {
+        width: 100%;
+    }
+
+    .btn {
+        margin-top: .5em;
+    }
+
+    /* view book popup */
+    .viewBook img {
+        top: 1.7%;
+        right: .7%;
+    }
+}

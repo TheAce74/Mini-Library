@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <img src="assets/pics/logo.svg" alt="Logo">
+        <h1>Study With The Ace</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#docs">Docs</a></li>
+            </ul>
+        </nav>
+        <img src="assets/icons/regular/x.svg" alt="Close" id="close">
+    </header>
+
+    <img src="assets/icons/regular/bars.svg" alt="Menu" id="open">
+
+    <!-- home section -->
+    <section id="home">
+        <h2>Hi there 👋</h2>
+        <h2>Study Smart with us 😊</h2>
+    </section>
+
+    <!-- books section -->
+    <section id="books">
+        <div class="favorites">
+            <h2>Favorites</h2>
+        </div>
+
+        <div class="recent">
+            <h2>Recently Read</h2>
+        </div>
+
+        <div class="allBooks">
+            <h2>All Books</h2>
+
+            <div class="filter">
+                <label for="filter">Filter By Name:</label>
+                <input type="text" id="filter">
+            </div>
+
+            <ol>
+
+            </ol>
+        </div>
+
+        <img src="assets/icons/regular/plus.svg" alt="Add new book" title="New Book" class="add">
+    </section>
+
+    <!-- docs section -->
+    <section id="docs">
+        <h2>Site Features</h2>
+        <ol>
+            <li>Addition of books</li>
+            <li>Deletion of books</li>
+            <li>Quick access features</li>
+            <li>Tracking study pace</li>
+            <li>Indicating study progress</li>
+        </ol>
+
+        <h2>Basic Usage</h2>
+        <ol>
+            <li>
+                Adding Books
+                <ol>
+                    <li>Click on the plus &quot;&plus;&quot; icon beneath the &quot;All Books&quot; section</li>
+                    <li>Add the correct details of any book you are currently reading</li>
+                    <li>Click the &quot;Add&quot; button</li>
+                </ol>
+            </li>
+            <li>
+                Deleting Books
+                <ol>
+                    <li>Go to the &quot;All Books&quot; section</li>
+                    <li>Click the &quot;trash can&quot; icon</li>
+                </ol>
+            </li>
+            <li>
+                Favorites
+                <ol>
+                    <li>
+                        <u>Adding Favorites:</u>&nbsp;&nbsp;You can add your favorite books to the &quot;Favorites&quot;
+                        section by clicking on the hollow star icon found either in the &quot;All Books&quot; or
+                        &quot;Recently Read&quot; sections or both
+                    </li>
+                    <li>
+                        <u>Removing Favorites:</u>&nbsp;&nbsp;You can remove an item from the &quot;Favorites&quot;
+                        section by
+                        clicking on the solid star icon found either in the &quot;All Books&quot; or &quot;Recently
+                        Read&quot;
+                        sections or both; or by clicking on the bookmark icon in the &quot;Favorites Section&quot;
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <u>Tracking Study Pace:</u>&nbsp;&nbsp; Have you ever been in a situation where you are reading a book
+                and
+                it just doesn't seem to end? I'm guessing that's a yes. A really fun way to keep yourself motivated is
+                to
+                keep track of your progress; you can do that by:
+                <ol>
+                    <li>Adding the book</li>
+                    <li>Clicking on the view icon (the eye of a shinigami 😂)</li>
+                    <li>Simply check the chapters you've read and the progress you've made is displayed quite colorfully
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <u>Recently Read:</u>&nbsp;&nbsp;Each time you check a chapter of any book, the book is automatically
+                added to the &quot;Recently Read&quot; section. The max items the said section can hold is five; thus
+                any time you visit the page you can quickly see the last five (could be less) books you read in
+                chronological order
+            </li>
+        </ol>
+
+        <p><em><b>PS:&nbsp;&nbsp;</b></em>If all the guidelines above went over your head, consider reading them again
+            or simply hover over an icon to view its function</p>
+        <p>Enjoy 🥰</p>
+
+        <h2>About</h2>
+        <p><span>Study With The Ace</span> is a mini library project created solely for the purpose of practice</p>
+        <p>Check out the <a href="https://github.com/TheAce74/Mini-Library" target="_blank">source code</a></p>
+
+        <h2>The Creator</h2>
+        <p>
+            This site was created by <span title="The Ace Developer">Udonsi Chisom</span>, you can follow him on
+            <a href="https://github.com/TheAce74" target="_blank">GitHub</a> to see more of his projects
+        </p>
+        <p>&copy;2022. All rights reserved 😉</p>
+        <br>
+        <br>
+    </section>
+
+    <!-- new book popup -->
+    <div class="newBook">
+        <img src="assets/icons/regular/x.svg" alt="Close" class="closePopup">
+
+        <h2>Add New Book</h2>
+
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name">
+        </div>
+
+        <div>
+            <label for="chapters">Chapters:</label>
+            <input type="number" id="chapters" min="1">
+        </div>
+
+        <button class="btn">Add</button>
+    </div>
+
+    <!-- view book popup -->
+    <div class="viewBook">
+        <img src="assets/icons/regular/x.svg" alt="Close" class="closeViewPopup">
+
+        <h2></h2>
+
+        <div>
+            <h3>Status:</h3>
+            <p id="studyProgress">Still Reading</p>
+        </div>
+
+        <div>
+            <progress max="100" value="0"></progress>
+            <p>0%</p>
+        </div>
+
+        <h3>Chapters</h3>
+
+        <div>
+
+        </div>
+    </div>
+</body>
+
+</html>
