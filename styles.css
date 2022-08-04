@@ -456,7 +456,6 @@ header nav ul li a:hover {
 .viewBook input[type="checkbox"] {
     accent-color: var(--green);
     cursor: pointer;
-    margin-top: .2em;
 }
 
 /* utility progress class */
