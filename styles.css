@@ -449,14 +449,14 @@ header nav ul li a:hover {
 
 .viewBook > div:nth-of-type(3) {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     row-gap: 1em;
 }
 
 .viewBook input[type="checkbox"] {
     accent-color: var(--green);
     cursor: pointer;
-    line-height:0;
+    margin-top: .2em;
 }
 
 /* utility progress class */
