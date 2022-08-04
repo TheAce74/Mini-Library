@@ -451,8 +451,7 @@ header nav ul li a:hover {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 1em;
-    width: 85%;
-    margin: auto;
+    padding: 0;
 }
 
 .viewBook input[type="checkbox"] {
