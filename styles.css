@@ -449,7 +449,7 @@ header nav ul li a:hover {
 
 .viewBook > div:nth-of-type(3) {
     display: grid;
-    grid-template-columns: 2.1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     row-gap: 1em;
 }
 
@@ -460,6 +460,7 @@ header nav ul li a:hover {
 .viewBook input[type="checkbox"] {
     accent-color: var(--green);
     cursor: pointer;
+    padding: 0;
 }
 
 /* utility progress class */
