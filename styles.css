@@ -628,4 +628,8 @@ header nav ul li a:hover {
         top: 1.7%;
         right: .7%;
     }
+
+    .viewBook > div:nth-of-type(3) {
+        width: 84%;
+    }
 }
