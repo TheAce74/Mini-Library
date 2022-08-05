@@ -449,7 +449,7 @@ header nav ul li a:hover {
 
 .viewBook > div:nth-of-type(3) {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 2.2fr 1fr;
     row-gap: 1em;
 }
 
